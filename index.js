@@ -22,7 +22,7 @@ function createMainWindow() {
   welcomerWindow = new BrowserWindow({
     icon: path.join(__dirname, 'app/images/rice-ball.png'),
     width: 500,
-    height: 300,
+    height: 250,
     center: true,
     resizable: false,
     frame: false
@@ -31,7 +31,7 @@ function createMainWindow() {
   const win = new BrowserWindow({
     icon: path.join(__dirname, 'app/images/rice-ball.png'),
     width: 500,
-    height: 300,
+    height: 250,
     center: true,
     'min-width': 320,
     'min-height': 480,
@@ -86,7 +86,7 @@ app.on('ready', function() {
   mainWindow = createMainWindow();
   ipc.on('page-ready', function(event) {
     mangare = event.sender;
-    welcomer.send('page-ready');
+    if (welcomer) welcomer.send('page-ready');
   });
   ipc.on('welcome-end', function() {
     welcomerWindow.close();

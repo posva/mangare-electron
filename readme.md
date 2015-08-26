@@ -12,6 +12,7 @@ $ npm install
 ### Run
 
 ```
+browserify app/js/main.js -o app/js/built.js
 $ npm start
 ```
 
