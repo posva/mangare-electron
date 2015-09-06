@@ -1,18 +1,20 @@
 # mangare
 
-> Some Manga app
+> A Manga app
 
 
 ## Dev
 
-```
-$ npm install
-```
+To make things faster while developing I use watchify instead of a gulp task for
+the coffee and run everything else (jade and stylus) with gulp. Therefore, while
+developing you need both commands to be running:
+
+- `npm run dev` launches watchify
+- `gulp watch` launches gulp
 
 ### Run
 
 ```
-browserify app/js/main.js -o app/js/built.js
 $ npm start
 ```
 
