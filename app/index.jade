@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title &#x1F359; Mangare
+    link(rel='stylesheet', href='style/index.css')
+    link(rel='stylesheet', href='https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css')
+    script(src='https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+  body
+    .container
+      header
+        h1 &#x1F359; Mangare
+      section#main
+        button(onclick='dorequest()') {{ n }}
+        input(v-model='n')
+        span Checked: {{ check ? 'yes' : 'no'}}
+        div(v-repeat='n')
+          mdl-checkbox(id='guat{{$index}}' v-model='check') My check {{$index}}: {{$value}}
+        .mdl-progress.mdl-js-progress(v-progress='n')
+        //-div
+          //-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent(v-mdl='', v-repeat='arr') {{$value}}
+        //-button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
+          //-| Button
+        // Colored FAB button
+        button.mdl-button.mdl-js-button.mdl-button--fab.mdl-button--colored(
+          v-on='click: check = true'
+          )
+          i.material-icons add
+      footer
+  script(src='js/main.js')
+  script(src='js/entry.js')

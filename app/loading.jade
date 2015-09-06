@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title &#x1F359; Mangare is loading
+    link(rel='stylesheet', href='style/loading.css')
+    script.
+      "use strict"
+      var ipc = require('ipc');
+      ipc.send('welcome');
+      ipc.on('page-ready', function() {
+      let el;
+      el = document.getElementsByTagName('h1')[0];
+      el.classList.remove('enter');
+      el.classList.add('fade');
+      el = document.getElementsByTagName('h4')[0];
+      el.classList.remove('enter');
+      el.classList.add('fade');
+      el.innerHTML = "Let's Go!"
+      setTimeout(function() {
+      ipc.send('welcome-end');
+      }, 1000);
+      });
+  body
+    .container
+      header
+        h1.enter &#x1F359; Mangare
+        h4.enter Give me a second...
+      section#main
+      footer
