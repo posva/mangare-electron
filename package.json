@@ -22,7 +22,11 @@
     "prebuild": "gulp build",
     "build": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --all --version=0.31.0 && cp atom.icns dist/Mangare-darwin-x64/Mangare.app/Contents/Resources",
     "postbuild": "cp atom.icns dist/Mangare-darwin-x64/Mangare.app/Contents/Resources",
-    "build:osx": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=darwin --arch=x64  --version=0.31.0 && cp atom.icns dist/Mangare-darwin-x64/Mangare.app/Contents/Resources"
+    "build:osx": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=darwin --arch=x64  --version=0.31.0 && cp atom.icns dist/Mangare-darwin-x64/Mangare.app/Contents/Resources",
+    "build:win64": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=win32 --arch=x64  --version=0.31.0",
+    "build:win32": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=win32 --arch=ia32  --version=0.31.0",
+    "build:linux64": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=linux --arch=x64  --version=0.31.0",
+    "build:linux32": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --overwrite --platform=linux --arch=ia32  --version=0.31.0"
   },
   "files": [
     "index.js",
